@@ -1,5 +1,11 @@
+import UsersInfo from "./Containers/UsersInfo/UsersInfo.tsx";
+
 const App = () => {
-  return <>I'm starting my Home Work #57! ^_^</>;
+  return (
+    <>
+      <UsersInfo />
+    </>
+  );
 };
 
 export default App;
