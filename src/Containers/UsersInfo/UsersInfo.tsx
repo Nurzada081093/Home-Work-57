@@ -1,8 +1,8 @@
-import Users from "../../Components/Users/Users.tsx";
-import ToolBar from "../../Components/ToolBar/ToolBar.tsx";
-import UserForm from "../../Components/UserForm/UserForm.tsx";
-import { useState } from "react";
-import { IUser } from "../../types";
+import Users from '../../Components/Users/Users.tsx';
+import ToolBar from '../../Components/ToolBar/ToolBar.tsx';
+import UserForm from '../../Components/UserForm/UserForm.tsx';
+import { useState } from 'react';
+import { IUser } from '../../types';
 
 const UsersInfo = () => {
   const [users, setUsers] = useState<IUser[]>([
@@ -24,7 +24,7 @@ const UsersInfo = () => {
       id: "03",
       name: "Elli",
       email: "elli@gmail.com",
-      position: "Customer Service",
+      position: "Customer service",
       active: false,
     },
     {
@@ -36,18 +36,24 @@ const UsersInfo = () => {
     },
   ]);
 
+  const addNewUser = (newUser: IUser) => {
+    setUsers((prevState) => [...prevState, newUser]);
+  };
+
   return (
-    <div>
+    <div className="pb-5 bg-success text-dark bg-opacity-10">
       <header>
         <ToolBar />
       </header>
-      <main className="container mb-5">
-        <div className="d-flex justify-content-between">
-          <div className="me-3">
-            <UserForm />
+      <main className="container mt-5">
+        <div className="row">
+          <div className="col-12 col-md-3 mb-3">
+            <UserForm addNewUser={addNewUser} />
           </div>
-          <div className="row row-cols-1 row-cols-md-3 g-4">
-            <Users users={users} />
+          <div className="col-12 col-md-9">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+              <Users users={users} />
+            </div>
           </div>
         </div>
       </main>

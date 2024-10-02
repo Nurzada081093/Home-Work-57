@@ -29,7 +29,7 @@ const User: React.FC<UserProps> = ({ user }) => {
   } else if (user.position === "Animator") {
     user.imageUrl =
       "https://cdn4.vectorstock.com/i/1000x1000/39/63/tourist-girl-cartoon-with-bag-design-vector-25633963.jpg";
-  } else if (user.position === "Customer Service") {
+  } else if (user.position === "Customer service") {
     user.imageUrl =
       "https://www.itilite.com/in/wp-content/uploads/sites/3/2023/04/The-importance-of-customer-service-in-travel-management-companies-1-unsmushed.jpg";
   }
