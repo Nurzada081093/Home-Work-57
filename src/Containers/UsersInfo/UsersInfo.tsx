@@ -1,5 +1,6 @@
 import Users from '../../Components/Users/Users.tsx';
 import ToolBar from '../../Components/ToolBar/ToolBar.tsx';
+import UserForm from '../../Components/UserForm/UserForm.tsx';
 
 const UsersInfo = () => {
   return (
@@ -8,7 +9,14 @@ const UsersInfo = () => {
         <ToolBar />
       </header>
       <main className="container">
-        <Users />
+        <div className="d-flex justify-content-around">
+          <div>
+            <UserForm/>
+          </div>
+          <div>
+            <Users/>
+          </div>
+        </div>
       </main>
     </div>
   );
