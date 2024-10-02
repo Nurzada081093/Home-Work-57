@@ -1,10 +1,17 @@
 import User from './User.tsx';
+import { IUser } from '../../types';
+import * as React from 'react';
 
-const Users = () => {
+interface IProps {
+  users: IUser[];
+}
+
+const Users: React.FC<IProps> = ({ users }) => {
   return (
-    <div>
-      <User />
-    </div>
+    users &&
+    users.map((user) => {
+      return <User key={user.id} user={user} />;
+    })
   );
 };
 
